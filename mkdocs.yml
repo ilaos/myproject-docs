@@ -1,1 +1,14 @@
 site_name: My Project Docs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+nav:
+  - Welcome to MkDocs: index.md
