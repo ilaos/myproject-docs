@@ -9,9 +9,24 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+  features:
+    - header.autohide
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ilaos/myproject-docs
+    - icon: fontawesome/brands/wordpress
+      link: https://api.almaseo.com/
+      name: Dashboard
 
 nav:
   - Home: index.md
   - Installation Guide: installation.md
   - User Manual: user-manual.md
   - FAQs: faq.md
+
+extra_css:
+  - stylesheets/extra.css

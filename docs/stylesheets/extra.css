@@ -1,0 +1,26 @@
+/* Custom styles for AlmaSEO Documentation */
+
+/* Style the dashboard link in header */
+.md-header__source a[href*="api.almaseo.com"] {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  margin-right: 1rem;
+  transition: background-color 0.2s;
+}
+
+.md-header__source a[href*="api.almaseo.com"]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Hide the original dashboard links in content */
+div[style*="text-align: center"] a[href*="api.almaseo.com"] {
+  display: none;
+}
+
+/* Alternative: Make the original links less prominent */
+div[style*="text-align: center"] {
+  margin-bottom: 10px;
+  opacity: 0.7;
+} 
