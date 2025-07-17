@@ -1,4 +1,4 @@
-site_name: My Project Docs
+site_name: AlmaSEO Docs
 
 theme:
   name: material
@@ -11,4 +11,7 @@ theme:
     code: Roboto Mono
 
 nav:
-  - Welcome to MkDocs: index.md
+  - Home: index.md
+  - Installation Guide: installation.md
+  - User Manual: user-manual.md
+  - FAQs: faq.md
