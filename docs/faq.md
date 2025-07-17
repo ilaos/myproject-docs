@@ -1,5 +1,11 @@
 # FAQs
 
+<div style="text-align: center; margin-bottom: 30px;">
+  <a href="https://api.almaseo.com/" style="text-decoration: none; color: #1976d2; font-weight: bold; font-size: 16px;">
+    ← Back to AlmaSEO Dashboard
+  </a>
+</div>
+
 ## General Questions
 
 ### What is AlmaSEO?

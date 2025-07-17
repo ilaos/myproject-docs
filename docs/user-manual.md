@@ -1,5 +1,11 @@
 # User Manual
 
+<div style="text-align: center; margin-bottom: 30px;">
+  <a href="https://api.almaseo.com/" style="text-decoration: none; color: #1976d2; font-weight: bold; font-size: 16px;">
+    ← Back to AlmaSEO Dashboard
+  </a>
+</div>
+
 ## Getting Started
 
 Welcome to AlmaSEO! This guide will walk you through all the features and help you maximize your content generation potential.
