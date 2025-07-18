@@ -26,6 +26,8 @@ nav:
   - Home: index.md
   - Installation Guide: installation.md
   - User Manual: user-manual.md
+  - Configuration:
+    - IP Whitelisting: configuration/ip-whitelisting.md
   - FAQs: faq.md
 
 extra_css:
