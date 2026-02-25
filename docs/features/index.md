@@ -8,6 +8,6 @@ As new features are developed or updated, they will be added here.
 
 ## Feature List
 
-(Feature documentation will appear below as it is added.)
+- [Alma AI Chat](alma-ai-chat.md) — Global AI chat assistant with live data access across all your sites
 
 ---
