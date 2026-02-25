@@ -27,6 +27,7 @@ nav:
   - Getting Started:
     - Installation: installation.md
     - IP Whitelisting: configuration/ip-whitelisting.md
+  - Features: features/index.md
   - User Manual: user-manual.md
   - FAQs: faq.md
 
