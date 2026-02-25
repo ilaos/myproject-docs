@@ -4,14 +4,14 @@
 
 Alma AI Chat is a global chat assistant built into every page of AlmaSEO. It gives you instant, conversational access to your platform data — sites, posts, automation jobs, SEO audits, and more — without leaving the page you're on.
 
-Unlike the site-specific "Ask Alma" tab (which only answers general SEO questions about one site), the global chat assistant can query your live data across all your sites and maintains a full conversation history.
+The global chat assistant can query your live data across all your sites — including Google Analytics and Google Search Console — and maintains a full conversation history.
 
 ---
 
 ## What It Does
 
 - **Answers questions about your sites** — list your sites, check automation status, review recent posts, diagnose failed jobs
-- **Queries live data** — Alma uses 10 built-in tools to pull real information from your AlmaSEO database in real time
+- **Queries live data** — Alma uses 18 built-in tools to pull real information from your database, Google Analytics, and Google Search Console in real time
 - **Provides SEO advice** — get actionable recommendations tailored to your business context
 - **Remembers your conversation** — chat history persists across browser sessions until you clear it
 - **Knows where you are** — Alma detects which site/page you're viewing and uses that as context
@@ -30,6 +30,16 @@ Unlike the site-specific "Ask Alma" tab (which only answers general SEO question
 | Get Content Gaps | Underperforming keywords and content opportunities |
 | Get Notifications | Your recent platform notifications |
 | Get Site Health Overview | Aggregate health — post counts, automation, last job |
+| **Google Analytics** | |
+| Get Analytics Overview | Users, sessions, bounce rate, engagement, pages/session |
+| Get Traffic Sources | Channel breakdown — Organic, Direct, Social, Referral |
+| Get Top Landing Pages | Best-performing pages by sessions with bounce rate |
+| Get Analytics Trends | Daily sessions and users to spot growth or drops |
+| **Google Search Console** | |
+| Get Search Performance | Total clicks, impressions, average CTR, average position |
+| Get Top Search Queries | Keywords driving traffic with clicks, CTR, position |
+| Get Top Pages (GSC) | Pages ranked by search clicks with impressions and CTR |
+| Get Device Breakdown | Search performance split by desktop, mobile, tablet |
 
 ---
 
@@ -51,6 +61,10 @@ Type your question and press **Enter** to send. Examples:
 - "Why did my last automation job fail?"
 - "What content gaps should I focus on?"
 - "Give me a health check on site #3"
+- "How is my site performing on Google Search Console?"
+- "What keywords are driving the most traffic?"
+- "Show me the device breakdown from Search Console"
+- "Compare my organic traffic sources with my search performance"
 
 Alma will automatically use the right tools to look up your data and respond with real, specific answers.
 
