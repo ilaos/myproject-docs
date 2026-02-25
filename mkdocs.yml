@@ -24,10 +24,10 @@ extra:
 
 nav:
   - Home: index.md
-  - Installation Guide: installation.md
-  - User Manual: user-manual.md
-  - Configuration:
+  - Getting Started:
+    - Installation: installation.md
     - IP Whitelisting: configuration/ip-whitelisting.md
+  - User Manual: user-manual.md
   - FAQs: faq.md
 
 extra_css:
