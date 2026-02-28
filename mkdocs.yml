@@ -27,9 +27,44 @@ nav:
   - Getting Started:
     - Installation: installation.md
     - IP Whitelisting: configuration/ip-whitelisting.md
-  - Features: features/index.md
-  - User Manual: user-manual.md
-  - FAQs: faq.md
+  - Features:
+    - Overview: features/index.md
+    - Alma AI Chat: features/alma-ai-chat.md
+    - Content Creation:
+      - Content Creation: features/content-creation/index.md
+      - Generate Content Brief Only: features/content-creation/generate-content-brief-only.md
+      - Article Types: features/content-creation/article-types.md
+      - Content Inventory: features/content-creation/content-inventory.md
+      - Content Output: features/content-creation/content-output.md
+      - Publishing & Export: features/content-creation/publishing-export.md
+      - Article Creation Form: features/content-creation/article-creation-form.md
+      - Post Details: features/content-creation/post-details.md
+      - GBP Testimonials: features/content-creation/gbp-testimonials-in-generated-articles.md
+    - Client Profile:
+      - Client Profile: features/client-profile/index.md
+      - Overview: features/client-profile/overview.md
+      - Business Information: features/client-profile/business-information.md
+      - Locations: features/client-profile/locations.md
+      - NAP Shield: features/client-profile/nap-shield.md
+      - Social Profiles: features/client-profile/social-profiles.md
+      - Services & Areas: features/client-profile/services-areas.md
+      - WordPress Settings: features/client-profile/wordpress-settings.md
+      - Google Services: features/client-profile/google-services.md
+      - Content Hub: features/client-profile/content-hub.md
+      - Ownership Tracker: features/client-profile/ownership-tracker.md
+      - Infrastructure Scan: features/client-profile/infrastructure-scan.md
+      - Website Analysis: features/client-profile/website-analysis.md
+      - Backlinks: features/client-profile/backlinks.md
+      - Content Automation: features/client-profile/content-automation.md
+      - Activity & Logs: features/client-profile/activity-logs.md
+    - Content Intelligence:
+      - Content Intelligence: features/content-intelligence/index.md
+      - AI Recommendations: features/content-intelligence/ai-content-recommendations.md
+      - Data Sources: features/content-intelligence/intelligence-data-sources.md
+      - Content Authority Engine: features/content-intelligence/content-authority-engine.md
+    - Structured Data: features/structured-data-schema/index.md
+    - WordPress Connector: features/almaseo-wordpress-connector-plugin/index.md
+    - Automation Center: features/automation-center/index.md
 
 extra_css:
   - stylesheets/extra.css
