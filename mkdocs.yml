@@ -65,6 +65,7 @@ nav:
     - Structured Data: features/structured-data-schema/index.md
     - WordPress Connector: features/almaseo-wordpress-connector-plugin/index.md
     - Automation Center: features/automation-center/index.md
+    - Role Access Matrix: features/role-access-matrix.md
 
 extra_css:
   - stylesheets/extra.css
