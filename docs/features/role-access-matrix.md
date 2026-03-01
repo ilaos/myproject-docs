@@ -75,7 +75,7 @@ AlmaSEO uses a hierarchical role system where each role includes all permissions
 | Search Console Indexing | Pro | — | — | ✅ | ✅ | Per user |
 | IndexNow Submission | Pro | — | — | ✅ | ✅ | Per user |
 | Google NLP Validation | Pro | — | — | ✅ | ✅ | Per user |
-| Email Campaign | Pro | — | — | ✅ | ✅ | Per user |
+| Mailchimp Article Blast | Pro | — | — | ✅ | ✅ | Per user |
 | Social Media Sharing | Pro | — | — | ✅ | ✅ | Per user |
 | Content Pipeline | Pro | — | — | ✅ | ✅ | Per client |
 | Topic Scheduling | Pro | — | — | ✅ | ✅ | Per client |

@@ -77,7 +77,7 @@ Required for any feature that reads from or publishes to a WordPress site. The [
 | Publication Report Email | Hard | Sends post-publish notification |
 | Client Work Report Email | Hard | Sends activity summary to clients |
 | Post-Ready Email Notifications | Hard | Alerts when automation completes a post |
-| Email Campaign | Hard | Distributes content via email |
+| Mailchimp Article Blast | Hard | Distributes content via email |
 
 ---
 

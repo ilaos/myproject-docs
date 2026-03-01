@@ -3,7 +3,7 @@
 **Tier:** Pro | **Type:** Integration
 
 !!! tip "Key Insight"
-    Same story as Email Campaign — extends AlmaSEO into distribution. "Create, publish, AND share — one dashboard." Combined with Email Campaign, positions AlmaSEO as true end-to-end content marketing platform, not just content creation. Consider which platforms matter most to target audience (LinkedIn for B2B agencies, Facebook/Instagram for local businesses, Twitter/X for thought leadership).
+    Same story as Mailchimp Article Blast — extends AlmaSEO into distribution. "Create, publish, AND share — one dashboard." Combined with Mailchimp Article Blast, positions AlmaSEO as true end-to-end content marketing platform, not just content creation. Consider which platforms matter most to target audience (LinkedIn for B2B agencies, Facebook/Instagram for local businesses, Twitter/X for thought leadership).
 
 ## Overview
 

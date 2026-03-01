@@ -40,6 +40,7 @@ nav:
       - Article Creation Form: features/content-creation/article-creation-form.md
       - Post Details: features/content-creation/post-details.md
       - GBP Testimonials: features/content-creation/gbp-testimonials-in-generated-articles.md
+      - Mailchimp Article Blast: features/content-creation/mailchimp-article-blast.md
     - Client Profile:
       - Client Profile: features/client-profile/index.md
       - Overview: features/client-profile/overview.md
