@@ -26,3 +26,11 @@ Lets users securely connect WordPress to AlmaSEO so AlmaSEO can publish content,
 - **Integrations:** Wordpress API
 - **Compatibility:** Wordpress
 
+## Target Audience
+
+Agencies, DIY Business Owners, Freelancers, Solo Practitioners
+
+## Sub-features
+
+- **[SEO Playground (WordPress On-Site SEO Toolkit)](seo-playground.md)** *(Core/Free + Pro)* — The full on-site SEO layer: 10+ sitemap types, schema markup (9 types), Evergreen content auditing, SEO health scoring, meta management with version history, robots.txt editor, redirects manager, 404 tracker, bulk metadata editor, and IndexNow integration. Works standalone; gains AI rewrite, keyword intelligence, and automated publishing when connected to the AlmaSEO dashboard.
+

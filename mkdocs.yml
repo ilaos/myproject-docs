@@ -64,7 +64,9 @@ nav:
       - Data Sources: features/content-intelligence/intelligence-data-sources.md
       - Content Authority Engine: features/content-intelligence/content-authority-engine.md
     - Structured Data: features/structured-data-schema/index.md
-    - WordPress Connector: features/almaseo-wordpress-connector-plugin/index.md
+    - WordPress Connector:
+      - WordPress Connector: features/almaseo-wordpress-connector-plugin/index.md
+      - SEO Playground: features/almaseo-wordpress-connector-plugin/seo-playground.md
     - Automation Center: features/automation-center/index.md
     - Role Access Matrix: features/role-access-matrix.md
     - Feature Dependencies: features/feature-dependencies.md
