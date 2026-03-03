@@ -43,9 +43,6 @@ The command center for each site/client. Every site added to AlmaSEO gets its ow
 | [NAP Shield](client-profile/nap-shield.md) | Agency | Monitors a business’s Name, Address, Phone (NAP) consistency across the web by discovering citati... |
 | [Social Profiles](client-profile/social-profiles.md) | Pro | A centralized place to store and manage a client’s social media profile links so they’re easy to ... |
 | [Services & Areas](client-profile/services-areas.md) | Pro | A Client Profile hub to define what services the business offers and the geographic areas it targ... |
-| [Wordpress Settings](client-profile/wordpress-settings.md) | Core/Free | Consolidated WordPress connection + diagnostics tab for a client site. 
-
-1) Connection Status (to... |
 | [Google Services](client-profile/google-services.md) | Pro | Client Profile parent dropdown that centralizes all Google-related connections, account/property ... |
 | [Content Hub](client-profile/content-hub.md) | Pro | Client Profile parent dropdown for end-to-end blog/content management. The Content Hub is a three... |
 | [Ownership Tracker](client-profile/ownership-tracker.md) | Agency | Password-protected, multi-tab spreadsheet embedded in Client Profile for documenting the credenti... |
