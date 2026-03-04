@@ -94,6 +94,8 @@ title: "Feature Name"
 slug: "feature-slug"
 type: "feature"
 status: "draft"
+tier: "Pro"
+feature_id: ""
 last_updated: "YYYY-MM-DD"
 ---
 
@@ -142,6 +144,8 @@ title: "Feature Name"          # Human-readable feature name
 slug: "feature-slug"           # Matches the filename (without .md)
 type: "feature"                # Always "feature" for feature docs
 status: "draft"                # draft | complete
+tier: "Pro"                    # Core/Free | Pro | Agency | Pro/Agency
+feature_id: "XX-FEAT-NAME"    # Internal feature ID (e.g., PL-AI-CHAT, CC-BLOG-ART)
 last_updated: "YYYY-MM-DD"    # Date of last meaningful edit
 ---
 ```
@@ -150,6 +154,8 @@ last_updated: "YYYY-MM-DD"    # Date of last meaningful edit
 
 - `slug` must match the filename. If the file is `email-reports.md`, the slug is `email-reports`.
 - `status` starts as `draft`. Set to `complete` only when the doc is reviewed and accurate.
+- `tier` indicates the minimum pricing tier required to access the feature. Use one of: `Core/Free`, `Pro`, `Agency`, or `Pro/Agency`.
+- `feature_id` is the internal identifier used in the codebase and roadmap (e.g., `PL-AI-CHAT`). If unknown, leave as an empty string `""`.
 - `last_updated` must be set to the current date whenever the doc content changes.
 
 ---

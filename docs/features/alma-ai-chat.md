@@ -3,6 +3,8 @@ title: "Alma AI Chat"
 slug: "alma-ai-chat"
 type: "feature"
 status: "complete"
+tier: "Pro/Agency"
+feature_id: "PL-AI-CHAT"
 last_updated: "2026-03-04"
 ---
 
