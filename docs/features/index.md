@@ -52,6 +52,8 @@ The command center for each site/client. Every site added to AlmaSEO gets its ow
 | [Content Automation](client-profile/content-automation.md) | Pro | Client Profile tab for planning, configuring, and monitoring a per-site automated content publish... |
 | [Activity & Logs](client-profile/activity-logs.md) | Pro/Agency | Unified, per-site timeline inside Client Profile (last tab) that shows everything that happened f... |
 | [Client Work Report Email](client-profile/client-work-report-email.md) | Pro/Agency | Inside the Client Profile → Activity & Logs tab, users can select reportable timeline entries (or... |
+| [WordPress SEO Plugin](client-profile/wordpress-seo-plugin.md) | Pro | Client Profile tab that shows which SEO plugin is installed on the connected WordPress site (auto-detected). Displays the detected plugin and a dropdown to select from AlmaSEO Playground, Yoast, Rank Math, AIOSEO, and others. |
+| [AlmaSEO for WordPress](client-profile/almaseo-for-wordpress.md) | Pro | Client Profile tab showing the status and health of the AlmaSEO plugin (Connector or Playground) on a connected WordPress site. Provides version, connection status, and last communication timestamp. |
 
 ---
 
