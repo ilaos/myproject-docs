@@ -3,7 +3,7 @@
 **Tier:** Core/Free | **Type:** User-Facing UI
 
 !!! tip "Key Insight"
-    THIS is the static site / website builder differentiator in action. The UI makes it dead simple — pick your format, download or copy, grab the image, done. Screenshot-worthy for marketing to Hugo/Astro/Next.js crowd. Also the bridge for Squarespace/Wix users via Quick Copy. Should be prominently featured when targeting non-WordPress audiences.
+    Static Site Export is the non-WordPress differentiator. The UI makes it dead simple — pick your format, download or copy, grab the image, done. Supports Hugo, Astro, Next.js, Jekyll, 11ty, and MDX out of the box. Quick Copy mode bridges the gap for Squarespace/Wix users. Multi-location businesses get smart content — single location pulls full NAP data, multiple locations keep articles clean with just city names hyperlinked to each Google Maps business page. Should be prominently featured when targeting non-WordPress audiences.
 
 ## Overview
 
