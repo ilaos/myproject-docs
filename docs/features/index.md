@@ -13,6 +13,12 @@ AlmaSEO Product Map — 7 Top-Level Modules
 
 ---
 
+## ■ [Activity Feed — Cross-Site Activity Timeline](activity-feed.md) `Pro/Agency`
+
+Standalone feature — no sub-features.
+
+---
+
 ## ■ [Alma AI Chat — Global AI Assistant](alma-ai-chat.md) `Pro/Agency`
 
 Standalone feature — no sub-features.
