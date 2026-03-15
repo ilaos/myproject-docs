@@ -5,7 +5,7 @@ type: "feature"
 status: "complete"
 tier: "Core/Free"
 feature_id: "PL-WP-CONNECTOR"
-last_updated: "2026-03-04"
+last_updated: "2026-03-15"
 ---
 
 # AlmaSEO WordPress Connector Plugin
@@ -16,7 +16,7 @@ The AlmaSEO WordPress Connector Plugin is a lightweight WordPress plugin that ac
 
 The Connector is the **foundation of the WordPress integration**. Every WordPress-dependent feature — content publishing, metadata syncing, schema injection, and automation — requires the Connector (or its upgraded counterpart, the SEO Playground) to be installed and active.
 
-**Current Version:** 1.5.0
+**Current Version:** 2.1.4
 
 ---
 
@@ -24,10 +24,28 @@ The Connector is the **foundation of the WordPress integration**. Every WordPres
 
 ### Secure Authentication
 
-The Connector establishes a secure connection between WordPress and AlmaSEO using WordPress Application Passwords (Basic Auth). It supports two setup paths:
+The Connector supports two authentication methods, automatically selecting the right one for each hosting environment:
+
+**Method 1 — Application Passwords (Basic Auth)**
+
+The standard WordPress authentication method, available since WordPress 5.6. The plugin generates an Application Password and AlmaSEO uses it with Basic Auth (`Authorization: Basic`) on every API request.
+
+**Method 2 — JWT Token Authentication**
+
+Some hosting providers (GoDaddy, SiteGround, Bluehost, and others) run server-level firewalls (WAFs) that strip the `Authorization` header from REST API requests, which breaks Application Passwords entirely. For these hosts, the Connector provides JWT (JSON Web Token) authentication as a built-in alternative.
+
+- The plugin generates a **64-character HMAC secret** on activation, stored in `almaseo_jwt_secret`.
+- A signed **HS256 JWT token** is created containing the username, site URL, issue time, and a 365-day expiry.
+- The token is passed via a custom **`X-AlmaSEO-Token` header** — custom headers are not stripped by hosting WAFs, unlike the `Authorization` header.
+- The plugin validates the signature, expiry, scope, and user permissions on every request.
+
+Both methods are available simultaneously — the plugin checks for JWT first, then falls back to Basic Auth. The AlmaSEO dashboard auto-detects which format was entered and routes accordingly.
+
+**Connection setup paths:**
 
 - **Auto-connect** — a secret-based flow where the plugin generates and returns credentials automatically, requiring minimal user effort.
-- **Manual setup** — the user generates an Application Password in WordPress and enters it into AlmaSEO.
+- **Manual setup** — the user copies their Application Password or JWT Token from the plugin settings and enters it into AlmaSEO.
+- **Smart fallback** — if Application Password generation fails (due to hosting restrictions), the plugin automatically detects the block and presents the JWT Token as the recommended connection method.
 
 A 32-character shared secret is generated on plugin activation and validated using `hash_equals()` for timing-attack resistance. CORS headers restrict API access to `https://api.almaseo.com` only.
 
@@ -116,17 +134,22 @@ AlmaSEO tracks the state of AlmaSEO plugins on each connected site:
 
 1. Open a site's **Client Profile** in AlmaSEO.
 2. Navigate to the **AlmaSEO for WordPress** tab.
-3. Click **Download Connector v1.5.0**.
+3. Click **Download Connector**.
 4. The plugin ZIP file downloads to your computer.
 
 ### Step 2: Install on WordPress
 
 1. Log into your WordPress admin dashboard.
 2. Go to **Plugins → Add New → Upload Plugin**.
-3. Select the downloaded `alma-seoconnector-v1.5.0.zip` file.
+3. Select the downloaded ZIP file.
 4. Click **Install Now**, then **Activate**.
 
-On activation, the plugin automatically generates a shared secret for secure communication.
+On activation, the plugin:
+
+- Generates a shared secret for secure communication
+- Generates a JWT signing secret for alternative authentication
+- Redirects to the **AlmaSEO Connector** settings page
+- Appears as a top-level item in the WordPress admin sidebar
 
 ### Step 3: Connect to AlmaSEO
 
@@ -136,14 +159,28 @@ On activation, the plugin automatically generates a shared secret for secure com
 2. Follow the auto-connect prompts — AlmaSEO passes a secret to the plugin, which returns credentials automatically.
 3. Connection is established with no manual credential entry.
 
-**Option B — Manual Setup:**
+**Option B — Application Password (Standard Hosts):**
 
 1. In WordPress, go to **Users → Your Profile → Application Passwords**.
 2. Enter a name (e.g., "AlmaSEO") and click **Add New Application Password**.
 3. Copy the generated password.
-4. In AlmaSEO, go to the site's **Client Profile → WordPress Settings** tab.
-5. Enter your WordPress username and the Application Password.
-6. Click **Test Connection** to verify.
+4. In AlmaSEO, go to the site's connection screen or **WordPress Settings** tab.
+5. Enter your WordPress username and paste the Application Password into the **Authentication Token** field.
+6. Click **Connect** or **Test Connection** to verify.
+
+**Option C — JWT Token (Restricted Hosts):**
+
+If your hosting provider blocks Application Passwords (common on GoDaddy, SiteGround, Bluehost, and other managed hosts), the plugin will detect the issue automatically when you click **Generate Password** and present the JWT Token as the recommended alternative:
+
+1. In WordPress admin, go to **AlmaSEO Connector** in the sidebar.
+2. Click **Generate Password** — the plugin tests whether Application Passwords work on your host.
+3. If blocked, the plugin shows a **"Use JWT Token Instead"** section with the token ready to copy.
+4. Copy the **JWT Token**.
+5. In AlmaSEO, paste the JWT Token into the **Authentication Token** field. The dashboard auto-detects the format — no need to specify that it's a JWT.
+6. Click **Connect** to verify.
+
+!!! note "The Authentication Token field accepts both formats"
+    You can paste either an Application Password or a JWT Token into the same field. AlmaSEO detects which type it is automatically. WordPress username is optional when using JWT.
 
 ### Step 4: Verify the Connection
 
@@ -168,10 +205,12 @@ On activation, the plugin automatically generates a shared secret for secure com
 
 | Setting | Location | Description |
 |---------|----------|-------------|
-| WordPress username | WordPress Settings tab | The WordPress admin username used for API access |
+| WordPress username | WordPress Settings tab | The WordPress admin username (optional for JWT) |
 | Application Password | WordPress Settings tab | The Application Password for Basic Auth (show/hide toggle) |
-| Connection status | WordPress Settings tab | Badge showing connected, error, or unknown |
-| Test Connection | WordPress Settings tab | Button to verify credentials are valid |
+| JWT Token | WordPress Settings tab | Alternative authentication token for hosts that block Application Passwords. Shows Active/Expiring Soon/Expired badge |
+| Connection status | WordPress Settings tab | Badge showing connected, error, or unknown. Shows "(JWT)" when connected via JWT |
+| JWT expiry warning | WordPress Settings tab & Overview tab | Red alert if token has expired, yellow alert if expiring within 30 days, with step-by-step renewal instructions |
+| Test Connection | WordPress Settings tab | Button to verify credentials are valid. Auto-suggests JWT if Basic Auth is blocked with 403 |
 
 ### SEO Plugin Configuration
 
@@ -188,14 +227,18 @@ On activation, the plugin automatically generates a shared secret for secure com
 | CORS origin | `https://api.almaseo.com` | Only AlmaSEO can call plugin endpoints |
 | Shared secret | Auto-generated (32 chars) | Protects auto-connect and password generation endpoints |
 | Secret source | `wp_options` or `wp-config.php` | `ALMASEO_SECRET` constant in wp-config takes priority |
+| JWT signing secret | Auto-generated (64 chars) | Stored in `almaseo_jwt_secret` option, used for HS256 token signing |
+| JWT token expiry | 365 days | Tokens expire after one year; dashboard shows warnings starting 30 days before |
+| JWT delivery | `X-AlmaSEO-Token` header | Custom header bypasses WAF restrictions on `Authorization` |
 | Nonce verification | WordPress standard | Required for admin-only operations |
 
 ### Connector vs SEO Playground
 
-| Aspect | Connector (v1.5.0) | SEO Playground (v7.9.0) |
+| Aspect | Connector (v2.1.4) | SEO Playground (v8.7.0) |
 |--------|---------------------|-------------------------|
 | Purpose | Bridge only | Bridge + full SEO toolkit |
-| Size | ~1 MB | ~5-10 MB |
+| Size | ~350 KB | ~5-10 MB |
+| Authentication | Application Passwords + JWT | Application Passwords + JWT |
 | Admin UI | Settings page only | Full admin pages and meta boxes |
 | SEO editing | None | Bulk meta editor, schema, health scoring, and more |
 | Upgrade path | Deactivate Connector → install Playground | N/A |
@@ -207,12 +250,15 @@ If both plugins are detected as active, AlmaSEO shows a conflict warning and ins
 
 ## Notes / Edge Cases
 
-- **Application Password support** — requires WordPress 5.6+. Some managed hosting providers (e.g., GoDaddy Managed WordPress) may restrict Application Password generation.
+- **Application Passwords blocked by hosting** — some hosting providers (GoDaddy, SiteGround, Bluehost, and similar managed hosts) strip the `Authorization` header from REST API requests via their server-level WAF/ModSecurity rules. This breaks Application Passwords entirely. The Connector detects this automatically when the user clicks "Generate Password" — the password is created and immediately tested via REST API. If the test fails, the plugin shows the JWT Token as the recommended alternative. Manual Application Password creation through Users → Profile will also fail on these hosts for the same reason.
+- **JWT token expiry** — JWT tokens expire after 365 days. The AlmaSEO dashboard reads the expiry directly from the token's payload (no database tracking needed) and shows warnings starting 30 days before expiry. When expired, a red alert with step-by-step renewal instructions appears on both the Overview and WordPress Settings tabs.
+- **JWT token renewal** — to renew an expiring or expired token, visit the AlmaSEO Connector settings page in WordPress admin. A fresh token is generated each time the page loads. Copy it and paste it into the WordPress Settings tab in AlmaSEO.
+- **Authentication auto-detection** — the AlmaSEO dashboard's Authentication Token field accepts both Application Passwords and JWT Tokens. The format is detected automatically (JWT tokens have three dot-separated segments starting with "eyJ"). No separate field or manual selection is needed.
 - **AIOSEO Pro without REST API** — if AIOSEO Pro's REST API addon is not enabled, the Connector falls back to direct database writes or post meta. A specific warning is shown in the health check.
 - **Stale credentials** — if an Application Password is revoked in WordPress, the connection will fail with a 401 error. The user must generate a new password and update it in AlmaSEO.
-- **REST API disabled** — if the WordPress REST API is disabled (by a security plugin or server config), the Connector cannot function. The plugin state will show as `error`.
+- **REST API disabled** — if the WordPress REST API is disabled (by a security plugin or server config), the Connector cannot function. The plugin state will show as `error`. Note: JWT authentication still requires the REST API to be accessible — it only bypasses the `Authorization` header restriction, not the REST API itself.
 - **Activity logging** — plugin downloads, state changes, connection tests, and metadata updates are logged to the site's Activity & Logs timeline.
-- **Credential storage** — Application Passwords are stored in the AlmaSEO database (`sites` table). The auto-connect flow stores them in `almaseo_token`; manual entry stores them in `wp_app_password`. The system checks `almaseo_token` first.
+- **Credential storage** — credentials are stored in the AlmaSEO database (`sites` table). JWT tokens are stored in the `almaseo_token` column; Application Passwords are stored in `wp_app_password`. The system checks `almaseo_token` first. Both are marked as sensitive and excluded from debug logs.
 
 ### Sub-features
 
