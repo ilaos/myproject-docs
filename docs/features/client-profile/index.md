@@ -122,6 +122,12 @@ Per-site automated content publishing pipeline.
 | **[Guardrails & Safety](guardrails-safety.md)** | Over-publishing prevention, duplicate blocking, circuit breakers, and failure rate limits. |
 | **[Monitoring & Logs](monitoring-logs.md)** | Per-job logs and system health indicators across all automation activity. |
 
+#### Strategy & Planning
+
+| Section | What It Does |
+|---------|-------------|
+| **[Strategy Game Plan](strategy-game-plan.md)** | Recurring task scheduler with phases, milestones, and weekly calendar view. Define your SEO playbook per client — what to do, when, and why. Check-off system with streaks, login reminders, and automatic activity logging. |
+
 #### Activity & Logs
 
 | Section | What It Does |
