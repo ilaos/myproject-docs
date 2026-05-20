@@ -5,7 +5,7 @@ type: "feature"
 status: "complete"
 tier: "Core/Free"
 feature_id: "CP"
-last_updated: "2026-03-04"
+last_updated: "2026-05-20"
 ---
 
 # Client Profile
@@ -132,8 +132,9 @@ Per-site automated content publishing pipeline.
 
 | Section | What It Does |
 |---------|-------------|
-| **[Activity & Logs](activity-logs.md)** | Unified, chronological timeline of everything that happened for the site — content published, settings updated, Google connections established, posts indexed, backlinks checked, scans completed, automations triggered. Filterable and searchable. |
-| **[Client Work Report Email](client-work-report-email.md)** | Select reportable timeline entries (or auto-select the last 7 days), compose a branded email, and send a professional work report to the client. |
+| **[Retainer Tracking](retainer-tracking.md)** | Per-site monthly hour budget with custom billing cycles, progress tracking, pace indicator, overage rollover/write-off, and period history. |
+| **[Activity & Logs](activity-logs.md)** | Unified, chronological timeline of everything that happened for the site — content published, settings updated, Google connections established, posts indexed, backlinks checked, scans completed, automations triggered. Filterable and searchable. Delete any entry, add time to automated entries. |
+| **[Client Work Report Email](client-work-report-email.md)** | Select reportable timeline entries (Last 7 Days, Last 30 Days, or This Billing Period), compose a branded email, and send a professional work report to the client. |
 
 #### Settings
 

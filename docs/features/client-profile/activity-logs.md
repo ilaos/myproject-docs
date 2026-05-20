@@ -5,7 +5,7 @@ type: "feature"
 status: "complete"
 tier: "Pro/Agency"
 feature_id: ""
-last_updated: "2026-05-19"
+last_updated: "2026-05-20"
 ---
 
 # Activity & Logs
@@ -25,9 +25,13 @@ Provides a single source of truth for what happened on a site, so users can quic
 
 ## Sections
 
-The Activity & Logs tab is split into three sections:
+The Activity & Logs tab is split into four sections:
 
-### 1. Work Log
+### 1. Retainer Tracker
+
+A per-site monthly hour budget tracker that sits at the top of the tab. Shows progress bar, hours logged/remaining, days until due, and pace indicator. Supports custom billing cycles, overage rollover, and period history. See [Retainer Tracking](retainer-tracking.md) for full details.
+
+### 2. Work Log
 
 A dashboard for tracking manual, billable work performed for a client.
 
@@ -36,18 +40,18 @@ A dashboard for tracking manual, billable work performed for a client.
 - **Work Timer** — A real-time stopwatch for tracking work as it happens (see below).
 - **Recent Entries** — Quick-glance list of the latest manual entries.
 
-### 2. Activity Timeline & Reports
+### 3. Activity Timeline & Reports
 
 The main filterable timeline showing all activity for the site.
 
 - **Category filter** — All, Content, Automation, Site, SEO, System, Manual.
 - **Severity filter** — All, Success, Warning, Error, Info.
 - **Date range filter** — Custom date pickers with Apply/Clear buttons.
-- **Client Report Builder** — Select activities via checkboxes and compose a branded email report to send to your client via SendGrid (see [Client Work Report Email](client-work-report-email.md)).
-- **Timeline entries** — Date-grouped cards with icons, category badges, duration badges, source labels, and clickable post titles.
+- **Client Report Builder** — Select activities via checkboxes and compose a branded email report to send to your client via SendGrid (see [Client Work Report Email](client-work-report-email.md)). Quick-select buttons: **Last 7 Days**, **Last 30 Days**, and **This Billing Period** (visible when retainer is configured).
+- **Timeline entries** — Date-grouped cards with icons, category badges, duration badges, source labels, and clickable post titles. Each entry has a **delete button** (X) on hover and automated entries have an **"+ time" button** to add hours/minutes.
 - **Load More** — Paginated loading (50 entries per batch).
 
-### 3. Full Log
+### 4. Full Log
 
 A tabular view of the complete activity record.
 
@@ -100,6 +104,23 @@ When logging work (either via the timer or the "Log New Work" button), you can r
 | Time Spent | Yes | Hours and minutes (15-minute increments) |
 
 Manual entries appear in the timeline with a purple left border and work-type-specific icons. They can be edited or deleted after creation.
+
+## Entry Management
+
+All activity entries (manual and automated) support the following actions:
+
+| Action | How | Applies To |
+|--------|-----|-----------|
+| **Delete** | Click the X button (appears on hover, top-right of entry) | All entries |
+| **Edit** | Click the pencil icon to open the edit modal | Manual entries only |
+| **Add time** | Click "+ time" button to add hours/minutes via inline popup | Automated entries without a duration |
+| **Edit time** | Click the pencil next to the duration badge | Automated entries with existing duration |
+
+Deleting or editing entries automatically refreshes the stats cards, retainer tracker, and full log table.
+
+## Sticky Tab Navigation
+
+When switching between sites using the left sidebar, the current tab is remembered. If you're on the Activity & Logs tab for one client and click another client, you'll land on the same tab for that client instead of defaulting to Overview.
 
 ## Access Control
 

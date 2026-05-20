@@ -7,7 +7,9 @@
 
 ## Overview
 
-Inside the Client Profile → Activity & Logs tab, users can select reportable timeline entries (or auto-select the last 7 days), compose a branded email with grouped work items and an optional personal note, preview it (server-rendered HTML via Jinja2), and send it to the client via SendGrid. Each sent report is saved to a work_reports table and logged back into the activity log.
+Inside the Client Profile → Activity & Logs tab, users can select reportable timeline entries using quick-select buttons (**Last 7 Days**, **Last 30 Days**, or **This Billing Period** when retainer tracking is configured), compose a branded email with grouped work items and an optional personal note, preview it (server-rendered HTML via Jinja2), and send it to the client via SendGrid. Each sent report is saved to a work_reports table and logged back into the activity log.
+
+When [Retainer Tracking](retainer-tracking.md) is configured for a site, the report header date range automatically uses the billing period dates (e.g., "Apr 25 - May 24, 2026") instead of the entry date range, so clients see consistent period-based reporting.
 
 ## Why It Matters
 
