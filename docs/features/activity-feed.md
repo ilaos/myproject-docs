@@ -5,7 +5,7 @@ type: "feature"
 status: "complete"
 tier: "Pro/Agency"
 feature_id: ""
-last_updated: "2026-05-19"
+last_updated: "2026-05-21"
 ---
 
 # Activity Feed
@@ -23,7 +23,8 @@ The Activity Feed is a global page (`/activity-feed`) that combines activity fro
 
 - Displays all logged activity (content creation, automation events, SEO analyses, site changes, manual work entries, and system events) across every site you own in a single timeline.
 - Each entry shows a **site badge** identifying which client it belongs to, linking directly to that client's Activity & Logs tab.
-- **Summary stats bar** at the top shows 7-day activity counts across five categories for quick situational awareness.
+- **Retainer summary bar** at the top shows combined retainer budget, hours logged, hours remaining, and client count across all sites with [Retainer Tracking](client-profile/retainer-tracking.md) configured. Includes an achievements banner with gamification milestones (completion badges, streak tiers, personal bests). See [Retainer Tracking — Agency-Wide Summary](client-profile/retainer-tracking.md#agency-wide-summary-activity-feed) for details.
+- **Summary stats bar** shows 7-day activity counts across five categories for quick situational awareness.
 - **Search** across entry titles and descriptions to find specific activity.
 - Supports filtering by **site**, **category**, **severity**, and **date range** with quick-access date presets.
 - Groups entries by date (Today, Yesterday, or the full date) for easy scanning.
