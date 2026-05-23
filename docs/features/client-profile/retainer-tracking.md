@@ -33,6 +33,7 @@ Most SEO and marketing agencies operate on retainer models where clients pay for
 | **[Work Schedule Preferences](work-schedule-preferences.md)** | Weekend toggle, timezone auto-detection, workday end hour |
 | **[Daily Pacing Briefing](daily-pacing-briefing.md)** | Personalized login modal with daily target, gap reduction scenarios, burnout alerts |
 | **[Work Intelligence](work-intelligence.md)** | Compression detection, momentum tracking, client silence alerts, time sink detection, work category breakdown |
+| **[Retainer Settings Change Log](retainer-settings-log.md)** | Background audit trail for all retainer and work schedule setting changes |
 
 ## How to Use It
 

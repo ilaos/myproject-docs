@@ -88,6 +88,7 @@ Standalone feature — no sub-features.
     - ○ [Work Schedule Preferences](client-profile/work-schedule-preferences.md)
     - ○ [Daily Pacing Briefing](client-profile/daily-pacing-briefing.md)
     - ○ [Work Intelligence](client-profile/work-intelligence.md)
+    - ○ [Retainer Settings Change Log](client-profile/retainer-settings-log.md)
 - ● [Client Work Report Email](client-profile/client-work-report-email.md)
 - ● [WordPress SEO Plugin](client-profile/wordpress-seo-plugin.md)
 - ● [AlmaSEO for WordPress](client-profile/almaseo-for-wordpress.md)
