@@ -29,7 +29,7 @@ The Activity & Logs tab is split into four sections:
 
 ### 1. Retainer Tracker
 
-A per-site monthly hour budget tracker that sits at the top of the tab. Shows progress bar, hours logged/remaining, days until due, and pace indicator. Supports custom billing cycles, overage rollover, and period history. See [Retainer Tracking](retainer-tracking.md) for full details.
+A per-site monthly hour budget tracker that sits at the top of the tab. Shows progress bar, hours logged/remaining, days until due, and pace indicator. Supports custom billing cycles, overage rollover, period history, work timers, gamification, daily pacing briefings, and a global work intelligence layer. See [Client Retainer Intelligence & Tracking](retainer-tracking.md) for full details.
 
 ### 2. Work Log
 
@@ -37,7 +37,7 @@ A dashboard for tracking manual, billable work performed for a client.
 
 - **Stats cards** — Show number of entries and total hours logged this week and this month.
 - **"Log New Work" button** — Opens a modal to record manual work entries (phone calls, meetings, research, design work, etc.).
-- **Work Timer** — A real-time stopwatch for tracking work as it happens (see below).
+- **Work Timer** — A real-time stopwatch for tracking work as it happens. See [Work Timer & Topbar Indicator](work-timer.md) for full details.
 - **Recent Entries** — Quick-glance list of the latest manual entries.
 
 ### 3. Activity Timeline & Reports

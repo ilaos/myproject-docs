@@ -132,7 +132,7 @@ Per-site automated content publishing pipeline.
 
 | Section | What It Does |
 |---------|-------------|
-| **[Retainer Tracking](retainer-tracking.md)** | Per-site monthly hour budget with custom billing cycles, progress tracking, pace indicator, overage rollover/write-off, and period history. |
+| **[Client Retainer Intelligence & Tracking](retainer-tracking.md)** | Per-site hour budgets, billing cycles, work timers, gamification milestones, daily pacing briefings, and a global work intelligence layer with compression detection, momentum tracking, client silence alerts, time sink detection, and work category breakdown. |
 | **[Activity & Logs](activity-logs.md)** | Unified, chronological timeline of everything that happened for the site — content published, settings updated, Google connections established, posts indexed, backlinks checked, scans completed, automations triggered. Filterable and searchable. Delete any entry, add time to automated entries. |
 | **[Client Work Report Email](client-work-report-email.md)** | Select reportable timeline entries (Last 7 Days, Last 30 Days, or This Billing Period), compose a branded email, and send a professional work report to the client. |
 
@@ -254,6 +254,7 @@ The recommended setup order for maximum value:
 - **[Backlinks](backlinks.md)** *(Pro)* — Import, verify, outreach, and track backlinks.
 - **[Content Automation](content-automation.md)** *(Pro)* — Automated content publishing pipeline.
 - **[Activity & Logs](activity-logs.md)** *(Pro/Agency)* — Unified site activity timeline.
+- **[Client Retainer Intelligence & Tracking](retainer-tracking.md)** *(Pro/Agency)* — Retainer budgets, work timers, gamification, daily pacing briefings, and work intelligence.
 - **[Client Work Report Email](client-work-report-email.md)** *(Pro/Agency)* — Branded client reporting.
 - **[WordPress SEO Plugin](wordpress-seo-plugin.md)** *(Pro)* — SEO plugin detection and configuration.
 - **[AlmaSEO for WordPress](almaseo-for-wordpress.md)** *(Pro)* — AlmaSEO plugin health and status.

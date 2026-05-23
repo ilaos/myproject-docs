@@ -1,27 +1,38 @@
 ---
-title: "Retainer Tracking"
+title: "Client Retainer Intelligence & Tracking"
 slug: "retainer-tracking"
 type: "feature"
 status: "complete"
 tier: "Pro/Agency"
 feature_id: ""
-last_updated: "2026-05-21"
+last_updated: "2026-05-23"
 ---
 
-# Retainer Tracking
+# Client Retainer Intelligence & Tracking
 
 **Tier:** Pro/Agency | **Type:** User-Facing UI
 
 !!! tip "Key Insight"
-    Retainer Tracking turns the Activity & Logs tab from a passive record into an active budget management tool. It answers the question every agency needs: "How many hours do I have left this month for this client?"
+    This isn't just an hours counter. Client Retainer Intelligence & Tracking is a full operational command center that combines budget tracking, real-time timers, gamification, daily pacing briefings, and predictive work intelligence. It answers not only "how many hours do I have left?" but also "am I heading for a crunch?", "which clients are eating my time?", and "am I ahead or behind last month?"
 
 ## Overview
 
-Per-site monthly hour quota tracking with custom billing cycles, pace indicators, overage rollover, and period history. Lives at the top of the Activity & Logs tab in Client Profile, directly above the Work Log section. Hours are calculated from manual work entries logged in the same tab.
+Per-site monthly hour quota tracking with custom billing cycles, pace indicators, overage rollover, period history, work timers, gamification milestones, daily pacing briefings, and a global intelligence layer that analyzes patterns across all clients. Lives at the top of the Activity & Logs tab in Client Profile, with cross-site intelligence surfaced in the topbar stats ticker on every page.
 
 ## Why It Matters
 
-Most SEO and marketing agencies operate on retainer models where clients pay for a set number of hours per month. Without tracking, agencies either over-service clients (losing money) or under-service them (risking churn). This feature provides real-time visibility into budget utilization per client.
+Most SEO and marketing agencies operate on retainer models where clients pay for a set number of hours per month. Without tracking, agencies either over-service clients (losing money) or under-service them (risking churn). This feature provides real-time visibility into budget utilization per client, plus the operational intelligence to manage workload, pace, and sustainability across your entire portfolio.
+
+## Sub-Features
+
+| Feature | What It Does |
+|---------|-------------|
+| **[Retainer Tracking (Core)](retainer-tracking-core.md)** | Per-site hour budgets, billing cycles, progress bars, pace indicators, rollover, period history |
+| **[Retainer Gamification & Milestones](retainer-gamification.md)** | Quota milestones, streak tiers, personal bests, achievements banner |
+| **[Work Timer & Topbar Indicator](work-timer.md)** | Real-time per-client stopwatch with topbar display for up to 3 concurrent timers |
+| **[Work Schedule Preferences](work-schedule-preferences.md)** | Weekend toggle, timezone auto-detection, workday end hour |
+| **[Daily Pacing Briefing](daily-pacing-briefing.md)** | Personalized login modal with daily target, gap reduction scenarios, burnout alerts |
+| **[Work Intelligence](work-intelligence.md)** | Compression detection, momentum tracking, client silence alerts, time sink detection, work category breakdown |
 
 ## How to Use It
 
@@ -35,39 +46,27 @@ Most SEO and marketing agencies operate on retainer models where clients pay for
 
 ### Day-to-Day Use
 
-Once configured, the tracker shows:
+Once configured for at least one site, the system activates across the platform:
 
-- **Progress bar** — Color-coded visualization of hours used vs. quota (green -> blue -> orange -> red as you approach/exceed quota).
-- **Hours Logged** — Total manual work hours in the current billing period.
-- **Hours Remaining** — How many hours are left. Goes negative (shown in red) when over quota.
-- **Days Until Due** — Countdown to the billing cycle end date.
-- **Pace** — Ahead, On Track, or Behind based on where you should be proportionally through the period.
+- **Activity Logs tab** — Retainer tracker with progress bar, hours, pace, and timer
+- **Topbar (every page)** — Stats ticker carousel with daily target, tier breakdown, and intelligence slides
+- **Login** — Daily Pacing Briefing modal with personalized action plan
+- **Topbar timer pills** — Up to 3 concurrent client timers visible from any page
 
-### Changing Settings
+### Data Source
 
-Click the **gear icon** in the Retainer Tracker header to open an inline settings panel. You can adjust hours, billing day, and report visibility, or click the red X to disable retainer tracking (history is preserved).
-
-### Closing a Period
-
-At the end of each billing cycle, click **Close Period**. A modal shows:
-
-- Period summary (dates, quota, hours logged, over/under amount)
-- **If over quota**, two options:
-    - **Roll forward** — Overage hours carry into the next period as a credit, reducing next month's required work.
-    - **Write off** — Overage is recorded in history but does not carry forward. Next period starts fresh.
-- **If under quota** — Unused hours do not carry forward.
-
-### Period History
-
-Click **Period History** below the tracker to see a collapsible table of the last 6 closed periods, showing quota, logged hours, over/under, and any rolled-forward hours.
+Retainer hours are calculated from **all activity log entries with a duration** — manual work entries, automated entries with time added, and timer-logged sessions. The system uses `json_extract(metadata, '$.duration_minutes') > 0` to count any entry where time was recorded.
 
 ## Key Settings
 
 | Setting | Range | Description |
 |---------|-------|-------------|
 | Monthly Hours | 0.5 - 744 | Hour quota per billing period |
-| Billing Day | 1 - 31 | Day of month the billing period starts. For months shorter than the billing day (e.g., day 30 in February), the system clamps to the last day of that month. |
-| Show in Reports | On/Off | Include an hours summary block in client work report emails |
+| Billing Day | 1 - 31 | Day of month the billing period starts |
+| Show in Reports | On/Off | Include hours summary in client work report emails |
+| Include Weekends | On/Off | Count Sat/Sun as available workdays for pacing calculations |
+| Timezone | Auto-detected | Used for "today" calculation and workday hour boundaries |
+| Workday End Hour | 1-23 | When your workday ends (for reachability calculations) |
 
 ## Billing Period Calculation
 
@@ -86,10 +85,6 @@ The billing period is defined by the Billing Day setting:
 - **Under quota:** Unused hours always expire. The client is not owed makeup hours.
 - **Rollover display:** When rollover exists, a notice appears: "1.5h carried from last period - effective budget: 14.5h".
 
-## Data Source
-
-Retainer hours are calculated from **manual work entries only** (category = `manual` in the activity log). Automated entries (content generation, audits, etc.) do not count toward the retainer unless you manually add time to them using the duration editor.
-
 ## Database
 
 | Table/Column | Purpose |
@@ -97,6 +92,9 @@ Retainer hours are calculated from **manual work entries only** (category = `man
 | `sites.retainer_hours` | Monthly hour quota (nullable) |
 | `sites.billing_cycle_day` | Day of month billing starts (nullable, 1-31) |
 | `sites.show_hours_in_reports` | Whether to include hours in client reports |
+| `users.include_weekends` | Whether weekends count as workdays |
+| `users.timezone` | User's timezone for date calculations |
+| `users.workday_end_hour` | Hour (0-23) when the workday ends |
 | `retainer_periods` | Closed period snapshots (site_id, period dates, quota, logged minutes, rollover minutes, closed_at) |
 
 ## API Endpoints
@@ -107,46 +105,13 @@ Retainer hours are calculated from **manual work entries only** (category = `man
 | POST | `/api/retainer/settings` | Save retainer settings |
 | GET | `/api/retainer/status` | Get current period status, hours, pace, and history |
 | POST | `/api/retainer/close-period` | Close current period with rollover or write-off |
+| GET | `/api/work-schedule` | Get user work schedule preferences |
+| POST | `/api/work-schedule` | Save user work schedule preferences |
+| GET | `/api/burnout-check` | Get daily target, tier breakdown, intelligence slides, burnout alerts |
 
 ## Agency-Wide Summary (Activity Feed)
 
 The cross-site **Activity Feed** page (`/activity-feed`) shows a combined retainer summary bar at the top, aggregating all clients with retainer tracking configured. It displays total budget, total hours logged, total remaining, client count, and a progress bar.
-
-### Gamification & Milestones
-
-The summary includes an achievements banner that rewards progress with visual chips and badges. Milestones appear automatically based on your work.
-
-#### Quota Milestones
-
-| Milestone | Trigger | Visual |
-|-----------|---------|--------|
-| Halfway | Client reaches 50% of quota | Blue chip with percentage |
-| Quota Met | Client reaches 100% (within 10% overage) | Green chip with checkmark |
-| Over Quota | Client exceeds quota by more than 10% | Orange chip with fire icon and overage amount |
-| Finished Early | Quota met with 5+ days remaining in the period | Lightning bolt icon on the chip |
-| All Clients Touched | Every client has at least some hours logged | Purple chip |
-| Perfect Month | Every client meets quota in the same period | Gold crown banner across the top of the section |
-
-#### Streak Tiers
-
-Streaks count consecutive closed periods where quota was met. They appear as colored fire chips per client.
-
-| Tier | Requirement | Color |
-|------|-------------|-------|
-| Bronze | 3 consecutive periods | Bronze |
-| Silver | 6 consecutive periods | Silver |
-| Gold | 12 consecutive periods | Gold |
-
-#### Personal Bests
-
-| Milestone | Trigger | Visual |
-|-----------|---------|--------|
-| Personal Best | Total hours this period exceeds all previous periods | Yellow star chip |
-| Record Delivered | More clients delivered than any prior period | Yellow medal chip |
-
-Streaks and personal bests require closing periods to build history. They will appear once billing cycles are closed using the Close Period button on individual site retainer trackers.
-
-### Per-Client Breakdown
 
 Click **Per-client breakdown** to expand a grid showing each client's logged hours, quota, remaining hours, completion badge, and streak count.
 
@@ -155,4 +120,5 @@ Click **Per-client breakdown** to expand a grid showing each client's logged hou
 - Retainer tracking is entirely optional. Sites without it configured see a setup card instead of the tracker.
 - Disabling retainer tracking preserves period history in the database.
 - The progress bar caps at 100% visually but the percentage and hours remaining continue to reflect the true overage.
-- Work report emails use the billing period dates as the header date range when retainer is configured, instead of the entry date range.
+- Work report emails use the billing period dates as the header date range when retainer is configured.
+- For months shorter than the billing day (e.g., day 30 in February), the system clamps to the last day of that month.
