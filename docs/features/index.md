@@ -53,6 +53,7 @@ Standalone feature — no sub-features.
     - ○ [Content AI](client-profile/content-ai.md)
     - ○ [Business Profile](client-profile/business-profile.md)
         - – [AI Review Response Drafting](client-profile/ai-review-response-drafting.md)
+- ● [Bing Webmaster Tools](client-profile/bing-webmaster.md)
 - ● [Content Hub](client-profile/content-hub.md)
     - ○ [Published Posts](client-profile/published-posts.md)
     - ○ [Scheduled Posts](client-profile/scheduled-posts.md)
