@@ -69,6 +69,7 @@ Standalone feature — no sub-features.
     - ○ [First Impression Tool](client-profile/first-impression-tool.md)
     - ○ [GEO/AI Search Optimizer](client-profile/geo-ai-search-optimizer.md)
     - ○ [SEO Recovery 911](client-profile/seo-recovery-911.md)
+    - ○ [On-Demand SEO Insights](client-profile/on-demand-seo-insights.md)
 - ● [Backlinks](client-profile/backlinks.md)
     - ○ [Backlinks Overview](client-profile/backlinks-overview.md)
     - ○ [Opportunities](client-profile/opportunities.md)
