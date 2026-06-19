@@ -150,7 +150,7 @@ If the industry doesn't match a specific type, it falls back to `LocalBusiness`.
 - **Zero manual effort** — schema is generated automatically during content creation and embedded automatically during export. Users don't need to learn JSON-LD or manually add markup.
 - **Industry-specific accuracy** — a plumber's site gets `Plumber` schema, not generic `LocalBusiness`. This specificity improves relevance signals for search engines.
 - **Coverage visibility** — the dashboard shows exactly which posts have schema, which don't, and what types are missing — turning schema from an invisible technical detail into a trackable metric.
-- **Trust signal reinforcement** — LocalBusiness schema with accurate NAP data (pulled from the Locations tab) reinforces the same trust signals that NAP Shield monitors, creating consistency between what search engines see in schema and what they find across web citations.
+- **Trust signal reinforcement** — LocalBusiness schema with accurate NAP data (pulled from the Locations tab) reinforces trust signals by ensuring consistency between what search engines see in schema and what they find on the site.
 
 ---
 

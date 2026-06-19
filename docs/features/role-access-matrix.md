@@ -109,7 +109,7 @@ AlmaSEO uses a hierarchical role system where each role includes all permissions
 | Site Management | Agency | — | — | ✅ | ✅ | Per user |
 | Business Information | Core/Free | — | — | ✅ | ✅ | Per client |
 | Locations | Pro | — | — | ✅ | ✅ | Per client |
-| NAP Shield | Agency | — | — | ✅ | ✅ | Per client |
+| Link Profile | Pro | — | — | ✅ | ✅ | Per client |
 | Services & Areas | Pro | — | — | ✅ | ✅ | Per client |
 | Wordpress Settings | Core/Free | — | — | ✅ | ✅ | Per client |
 | Content AI | Pro | — | — | ✅ | ✅ | Per client |
@@ -117,7 +117,7 @@ AlmaSEO uses a hierarchical role system where each role includes all permissions
 | Google Ads | Agency | — | — | ✅ | ✅ | Per client |
 | Business Profile | Pro | — | — | ✅ | ✅ | Per client |
 | Google Services | Pro | — | — | ✅ | ✅ | Per client |
-| GBP Business Info → NAP Shield Ground Truth | Agency | — | — | ✅ | ✅ | Per client |
+| Competitor Link Gap | Pro | — | — | ✅ | ✅ | Per client |
 | Ownership Tracker | Agency | — | — | ✅ | ✅ | Fixed |
 | Infrastructure Scan | Pro | — | — | ✅ | ✅ | Per client |
 | Hosting | Pro | — | — | ✅ | ✅ | Per client |

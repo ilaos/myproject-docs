@@ -55,7 +55,7 @@ Required for any feature that reads from or publishes to a WordPress site. The [
 
 | Feature | Dependency Type | Notes |
 |---------|----------------|-------|
-| NAP Shield | **Hard** | GBP data is ground truth for NAP consistency |
+| Link Profile | Optional | GBP not required — uses SE Ranking backlink data |
 | GBP Search Queries → AI Recommendations | Hard | Feeds local search queries into content strategy |
 | Reviews → Content Mining | Hard | Mines review themes for blog topics |
 | GBP Testimonials in Articles | Hard | Embeds real 5-star reviews in generated content |
@@ -149,12 +149,12 @@ Quick reference for common setup questions.
 ### "I want SEO Recovery 911"
 1. OpenAI API key configured
 2. Google Search Console connected and verified
-3. (Optional) GBP connected for NAP consistency section
+3. (Optional) GBP connected for local SEO context
 
-### "I want NAP Shield"
-1. Google Business Profile connected
-2. Business Information filled in (name, address, phone)
-3. Locations configured (for multi-location businesses)
+### "I want Link Profile"
+1. SE Ranking API configured (`SERANKING_API_KEY`)
+2. Data credits available (150 per profile refresh, 100 per competitor gap)
+3. Site URL set (domain is extracted from the site URL)
 
 ### "I want Structured Data on my WordPress site"
 1. WordPress Connector Plugin installed

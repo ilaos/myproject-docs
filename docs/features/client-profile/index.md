@@ -34,7 +34,7 @@ The foundation — business data that powers everything else.
 |---------|---------------|
 | **[Business Information](business-information.md)** | Company name, owner, about us, phone, email, industry type, business hours, services offered, service areas, awards. Logo upload (PNG/JPG/SVG, max 2MB). |
 | **[Locations](locations.md)** | Multi-location NAP (Name, Address, Phone) management. Each location has its own address, phone, hours, Google Maps URL, and optional GBP connection. Supports Service Area Businesses (no public address). Bulk CSV import/export. |
-| **[NAP Shield](nap-shield.md)** | Monitors business name, address, and phone consistency across web citations (Google, Yelp, YP, etc.). Health score (0-100), consistent/inconsistent/missing counts, per-citation detail with exact values found vs. master data. |
+| **[Link Profile](link-profile.md)** | Backlink intelligence — domain authority, top referring domains by authority score, anchor text distribution, new/lost links (30 days), and competitor link gap analysis. Powered by SE Ranking. Uses data credits (150/refresh). |
 | **[Social Profiles](social-profiles.md)** | Centralized storage for Facebook, Twitter/X, Instagram, LinkedIn, YouTube, Pinterest, and TikTok URLs. Used by the content generator for accurate social links in articles. |
 | **[Services & Areas](services-areas.md)** | Services the business offers and geographic areas it serves. This is the single most impactful field for Content Intelligence — it transforms generic recommendations into business-specific ones. |
 | **Branding** | Primary and secondary brand colors, brand voice (Professional/Friendly/Authoritative/Conversational), and slogan. Colors apply to UI theming; voice feeds into content generation tone. |
@@ -162,7 +162,7 @@ Higher completeness directly improves content quality — more filled fields mea
 - **The intelligence layer** — every field in Client Profile makes the AI smarter. Business name, services, industry, and about us text are injected into every article as E-E-A-T signals. Without profile data, content is generic. With it, content reads like it was written by someone who knows the business.
 - **Single source of truth** — one place to manage all business data, Google connections, WordPress credentials, and content for each site. No jumping between tools or spreadsheets.
 - **Multi-client management** — agencies managing dozens of sites see each client as a card on the dashboard, then drill into the full profile. Each site is isolated — its own data, its own integrations, its own content pipeline.
-- **Feeds every feature** — Content Creation reads business info for E-E-A-T. Content Intelligence reads GSC and services for recommendations. Automation reads settings for scheduling. NAP Shield reads locations for consistency checks. Nothing works in isolation.
+- **Feeds every feature** — Content Creation reads business info for E-E-A-T. Content Intelligence reads GSC and services for recommendations. Automation reads settings for scheduling. Link Profile shows backlink authority and competitor gaps. Nothing works in isolation.
 - **Progressive value** — the more data connected (Google services, business details, locations), the more powerful every downstream feature becomes. Profile completeness is a direct indicator of platform value.
 - **Client accountability** — Activity & Logs plus Client Work Report Email create an audit trail and professional reporting workflow for agencies to demonstrate value to clients.
 
@@ -210,10 +210,10 @@ The recommended setup order for maximum value:
 | Field | Where It's Used |
 |-------|----------------|
 | `services_offered` | Content Intelligence (recommendation targeting), Content Creation (E-E-A-T, topic relevance) |
-| `business_name` | Content Creation (E-E-A-T author signals), NAP Shield (master data) |
+| `business_name` | Content Creation (E-E-A-T author signals), Link Profile (domain lookup) |
 | `about_us` | Content Creation (E-E-A-T experience/expertise signals, tenure extraction) |
 | `industry_type` | Content Creation (authority title mapping — Attorney, Specialist, Technician, etc.) |
-| `locations` (primary) | Content Creation (local SEO content), NAP Shield (consistency checks), GEO/AI Optimizer |
+| `locations` (primary) | Content Creation (local SEO content), GEO/AI Optimizer |
 | `brand_voice` | Content Creation (writing tone), Automation (default tone for scheduled posts) |
 | Google Search Console | Content Intelligence (gap analysis, search visibility), SEO Recovery 911 (audit data) |
 | Google Business Profile | Content Intelligence (search queries, review mining), Content Creation (GBP testimonials) |
@@ -244,7 +244,7 @@ The recommended setup order for maximum value:
 - **[Overview](overview.md)** *(Pro)* — Profile completeness and integration health dashboard.
 - **[Business Information](business-information.md)** *(Core/Free)* — Core business details for content personalization.
 - **[Locations](locations.md)** *(Pro)* — Multi-location NAP management with SAB support.
-- **[NAP Shield](nap-shield.md)** *(Agency)* — Web citation consistency monitoring.
+- **[Link Profile](link-profile.md)** *(Pro)* — Backlink intelligence powered by SE Ranking.
 - **[Social Profiles](social-profiles.md)** *(Pro)* — Social media URL storage.
 - **[Services & Areas](services-areas.md)** *(Pro)* — Services offered and geographic targeting.
 - **[Google Services](google-services.md)** *(Pro)* — Google integrations hub.

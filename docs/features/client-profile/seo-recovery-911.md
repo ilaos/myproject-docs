@@ -10,7 +10,7 @@
 ### Prerequisites
 
 - **Required:** Google Search Console connected and verified.
-- **Recommended:** NAP Shield has at least one location scanned (adds local SEO context).
+- **Recommended:** Link Profile has a snapshot (adds backlink authority context).
 - **Optional (enhances audit):** Google Analytics 4 connected (adds post-click diagnostics). Google Ads connected (adds search volume enrichment). DataForSEO credentials configured (adds AI Overview monitoring).
 
 ### Audit Configuration (modal)
@@ -64,7 +64,7 @@ The audit runs 17 analyses across 6 data sources when all integrations are conne
 **Supplementary Integrations:**
 
 - **GBP Audit** — category recommendations, review stats (when Google Business Profile connected).
-- **NAP Shield** — health score, conflicts, inconsistencies, multi-location support.
+- **Link Profile** — domain authority, referring domains, backlink health.
 
 ### Issue Detection
 
@@ -132,7 +132,7 @@ Gives agencies a repeatable emergency workflow to diagnose SEO performance issue
 ## Requirements
 
 - **Required:** Google Search Console (OAuth)
-- **Recommended:** NAP Shield (scanned location), Google Analytics 4 (OAuth)
+- **Recommended:** Link Profile (snapshot), Google Analytics 4 (OAuth)
 - **Optional:** Google Ads (search volume enrichment), Google Business Profile (OAuth), DataForSEO (AI Overview monitoring)
 - **AI:** OpenAI API (recovery plans + client communications)
 - **Email:** SendGrid (client comms + reminder notifications)
