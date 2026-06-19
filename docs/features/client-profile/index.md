@@ -97,6 +97,7 @@ AI-powered analysis tools for UX, SEO health, and search visibility.
 | **[First Impression Tool](first-impression-tool.md)** | Visual/UX analysis of the website — eye journey, clutter, layout, colors, typography, conversion elements, and mobile experience. Does **not** use location/address data (visual analysis only). |
 | **[GEO/AI Search Optimizer](geo-ai-search-optimizer.md)** | Analyzes the site's readiness for AI search engines (ChatGPT, Claude, Perplexity) — schema markup, content structure, authority signals, and citation-friendly formatting. Uses location data for local SEO signals. |
 | **[SEO Recovery 911](seo-recovery-911.md)** | Comprehensive SEO audit and recovery planning for ranking crises. GSC-powered analysis, dead zone detection (keywords stuck in positions 15-70), NAP health check, phased recovery plans (SEO/Paid/Hybrid), and professional client communications. Requires GSC connection. |
+| **[Live SERP Check](on-demand-seo-insights.md#live-serp-check)** | Query Google's live search results for any keyword. Detects AI Overviews, Featured Snippets, People Also Ask, and top organic results. Site-aware: highlights when your site appears (or doesn't) in results. Includes keyword volume/CPC/competition lookup. Uses data credits (25/keyword). Part of On-Demand SEO Insights. |
 
 #### Backlinks
 
@@ -250,7 +251,7 @@ The recommended setup order for maximum value:
 - **[Content Hub](content-hub.md)** *(Pro)* — Published, scheduled, and draft post management.
 - **[Ownership Tracker](ownership-tracker.md)** *(Agency)* — Password-protected credentials vault.
 - **[Infrastructure Scan](infrastructure-scan.md)** *(Pro)* — Automated domain, SSL, hosting, and email scanning.
-- **[Website Analysis](website-analysis.md)** *(Pro)* — First Impression, GEO/AI Optimizer, SEO Recovery 911.
+- **[Website Analysis](website-analysis.md)** *(Pro)* — First Impression, GEO/AI Optimizer, SEO Recovery 911, Live SERP Check.
 - **[Backlinks](backlinks.md)** *(Pro)* — Import, verify, outreach, and track backlinks.
 - **[Content Automation](content-automation.md)** *(Pro)* — Automated content publishing pipeline.
 - **[Activity & Logs](activity-logs.md)** *(Pro/Agency)* — Unified site activity timeline.

@@ -136,12 +136,95 @@ In all modes:
 - Cached/saved data is always free
 - Failed or blocked requests never deduct credits
 
+---
+
+## Live SERP Check
+
+**Location:** Client Profile > Website Analysis > Live SERP Check tab
+
+Live SERP Check lets users query Google's live search results for any keyword and see a structured breakdown of what Google is actually showing — not just the blue links, but the full SERP landscape.
+
+The tab contains two tools, both powered by the same data credit system as the SEO Snapshot Card.
+
+### SERP Feature Scanner
+
+Enter up to 10 keywords and see, for each one:
+
+| Data Point | What It Shows |
+|-----------|---------------|
+| AI Overview | Whether Google shows an AI-generated answer, including the full overview text and cited sources |
+| Featured Snippet | Whether a Featured Snippet exists, who holds it, and what it says |
+| People Also Ask | All PAA questions Google surfaces for this keyword |
+| Top Organic Results | The top 5 organic results with titles, URLs, and positions |
+| Site Presence | Whether your client's site appears in organic results, AI Overview sources, or the Featured Snippet |
+
+**Site-aware results:** The client's domain is automatically checked against all results. When the site appears, it's highlighted with a green "Your site" badge. When it doesn't appear, a warning flags specific threats:
+
+- "Google is answering this with AI — users may not click through"
+- "A competitor holds the Featured Snippet"
+
+**Credit cost:** 25 data credits per keyword
+
+**Cache:** Results are cached for 6 hours. Viewing cached results costs 0 credits.
+
+### Keyword Volume & Competition
+
+Enter up to 20 keywords and get Google Ads data for each:
+
+| Metric | Description |
+|--------|-------------|
+| Monthly Search Volume | Average monthly searches |
+| CPC | Cost-per-click (USD) |
+| Competition | Google Ads competition level (0-100) |
+| Difficulty | Keyword difficulty score (0-100) |
+
+Results are sorted by volume descending and color-coded by competition/difficulty level (Low/Medium/High).
+
+**Credit cost:** 25 data credits per keyword
+
+**Cache:** Results are cached for 24 hours. Viewing cached results costs 0 credits.
+
+### Confirmation Flow
+
+Both tools follow the same confirmation pattern:
+
+1. User enters keywords in the text area
+2. A live cost hint updates as they type (e.g. "3 keywords = 75 credits")
+3. User clicks the action button
+4. A confirmation modal appears showing:
+    - Credit cost of this action
+    - Current credit balance
+    - Projected balance after the transaction
+5. If the user has insufficient credits, the modal shows a link to the Data Credits page to purchase more
+6. User confirms — the API call fires and results display
+7. The balance bar at the top of the tab refreshes automatically
+
+### Credit Balance Bar
+
+A persistent balance bar at the top of the Live SERP Check tab shows:
+
+- Total available data credits
+- Monthly remaining vs. extra credit breakdown
+- "Get More Credits" link to `/data-credits`
+
+The balance loads automatically when the tab opens and refreshes after every action.
+
+### Why Live SERP Check Matters
+
+- **Spot AI Overview threats** — If Google is answering a query with AI, users may never click through to the client's site. Know which keywords are affected before investing in content.
+- **Find Featured Snippet opportunities** — See which keywords have snippets and who holds them. If it's a weak competitor, the client can take it with targeted content.
+- **Discover content ideas** — The People Also Ask questions Google shows are exactly what the audience wants answered. Use them for blog posts, FAQ pages, and service pages.
+- **Check keyword viability** — Before writing content, see the real search volume, CPC, and competition level so you know the keyword is worth targeting.
+- **Track changes over time** — Results are saved. Come back later and refresh to see if Google has changed how it answers key queries.
+
+---
+
 ## Requirements
 
 - **External provider:** Configured via server environment variable (admin setup)
 - **Stripe:** Required for credit pack purchases (optional — monthly included credits work without Stripe)
-- **No AI required:** This feature does not use AI models
+- **No AI required:** This feature does not use AI models. Powered by external SEO data APIs.
 
 ## Why It Matters
 
-Gives agencies instant access to competitive SEO metrics for any client site without leaving AlmaSEO. Cached snapshots make repeated views free, and the credit system ensures costs are transparent and predictable. Agencies can quickly assess a client's organic visibility, benchmark against competitors, and track changes over time — all from the same profile page where they manage content, automation, and reporting.
+Gives agencies instant access to competitive SEO metrics and live SERP intelligence for any client site without leaving AlmaSEO. Cached snapshots make repeated views free, and the credit system ensures costs are transparent and predictable. Agencies can quickly assess a client's organic visibility, investigate keyword opportunities, spot AI Overview threats, and track changes over time — all from the same profile page where they manage content, automation, and reporting.
