@@ -37,6 +37,12 @@ Standalone feature — no sub-features.
 
 ---
 
+## ■ [Billing & Invoicing](billing-invoicing.md) `Agency`
+
+Standalone feature — no sub-features.
+
+---
+
 ## ■ [Client Profile](client-profile/index.md) `Core/Free`
 
 - ● [Overview](client-profile/overview.md)
